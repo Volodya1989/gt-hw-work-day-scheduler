@@ -32,22 +32,12 @@ $(document).ready(function () {
     "4PM",
     "5PM",
   ];
-  //creating rows
-  //   for (var i = 0; i < 9; i++) {
-  //     var newRow = $("<div>");
-  //     newRow.addClass("row");
-
-  //     var newHour = $("<div>");
-  //     newHour.addClass("hour");
-  //     newHour.attr("id", hourId[i]);
-  //     newHour.attr("value", hourValue[i]);
-  //     $(".row").append(newHour);
-  //     $(".container").append(newRow);
-
-  //     console.log();
-  //   }
-
-  //creating hours section
+  // adding current time
+  moment().format();
+  var d = moment().format("dddd, MMMM Do");
+  var curTime = $(`<div class="time-block"><h5>${d}</h5></div`);
+  $("#currentDay").append(curTime);
+  //adding rows and hours
   for (var i = 0; i < 9; i++) {
     var newRow = $(
       `<div class='row'><div clas='hour col-sm-1' id =${hourId[i]}><h6>${hourValue[i]}</h6></div></div>`
@@ -60,6 +50,7 @@ $(document).ready(function () {
     textArea.addClass("col-sm-8 past present future ");
     $(".row").append(textArea);
   }
+  //adding save button
   for (var i = 0; i < 1; i++) {
     var btnSave = $("<div><i class='fas fa-lock'></i></div>");
     btnSave.addClass(" display-icon col-sm-1 saveBtn btn ");
