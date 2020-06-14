@@ -68,10 +68,14 @@ $(document).ready(function () {
     `);
     $(".container").append(newRow);
   }
+  $(".container").on("click", ".saveBtn", function() {
+      var textArea = $(this).parent().find('textarea');
+      console.log(textArea.val())
+      localStorage.setItem(hourKey, JSON.stringify(textArea.val()));
+    });
 
- 
+    
 });
 
-// $(".container").on("click", ".saveBtn", function() {
-// console.log($(this).parent().find('textarea').val());
-// });
+
+
