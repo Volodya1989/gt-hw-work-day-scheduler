@@ -12,17 +12,7 @@ $(document).ready(function () {
     "sixteen",
     "seventeen",
   ];
-  var buttonId = [
-    "btn-Nine",
-    "btn-Ten",
-    "btn-Eleven",
-    "btn-Twelve",
-    "btn-Thirteen",
-    "btn-Fourteen",
-    "btn-Fifteen",
-    "btn-Sixteen",
-    "btn-Seventeen",
-  ];
+
   var hours = {
     9: '9AM',
     10: '10AM',
@@ -68,14 +58,7 @@ $(document).ready(function () {
     `);
     $(".container").append(newRow);
   }
-  $(".container").on("click", ".saveBtn", function() {
-      var textArea = $(this).parent().find('textarea');
-      console.log(textArea.val())
-      localStorage.setItem(hourKey, JSON.stringify(textArea.val()));
-    });
 
-    
 });
 
-
-
+ 
